@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import shortid from 'shortid';
+import s from 'components/ContactForm/ContactForm.module.scss';
 
 class Form extends Component {
   state = {
@@ -36,9 +37,8 @@ class Form extends Component {
     const numberInputId = shortid.generate();
 
     return (
-      <form onSubmit={setContact}>
-        <label htmlFor={nameInputId}>
-          Name
+      <form className={s.Form} onSubmit={setContact}>
+        <div className={s.group}>
           <input
             type="text"
             name="name"
@@ -49,9 +49,11 @@ class Form extends Component {
             id={nameInputId}
             onChange={setNewValue}
           />
-        </label>
-        <label htmlFor={numberInputId}>
-          Number
+          <label htmlFor={nameInputId}>Name</label>
+          <div className="bar"></div>
+        </div>
+
+        <div className={s.group}>
           <input
             type="tel"
             name="number"
@@ -62,8 +64,12 @@ class Form extends Component {
             id={numberInputId}
             onChange={setNewValue}
           />
-        </label>
-        <button type="submit">add contact</button>
+          <label htmlFor={numberInputId}>Number</label>
+          <div className="bar"></div>
+        </div>
+        <button className={s.Btn} type="submit">
+          add contact
+        </button>
       </form>
     );
   }

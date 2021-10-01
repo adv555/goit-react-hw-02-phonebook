@@ -1,7 +1,8 @@
-// import './App.css';
 import 'styles/shared.scss';
 import shortid from 'shortid';
 import { Component } from 'react';
+import Header from 'components/Header';
+import Section from 'components/Section';
 import Form from 'components/ContactForm';
 import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
@@ -65,22 +66,18 @@ class App extends Component {
     const visibleContact = this.getFilterContacts();
 
     return (
-      <section className="App">
-        <div className="Container">
-          <div className="AppHeader">
-            <h1>PhoneBook</h1>
-            <Form onSubmit={addContact} />
-          </div>
-          <div>
-            <h2>Contacts</h2>
-            <Filter value={filter} onChange={changeFilterValue} />
-            <ContactList
-              contacts={visibleContact}
-              onDeleteContact={deleteContact}
-            />
-          </div>
-        </div>
-      </section>
+      <div className="App">
+        <Header title={'PhoneBook'}>
+          <Filter value={filter} onChange={changeFilterValue} />
+        </Header>
+        <Section title={'Contacts'}>
+          <Form onSubmit={addContact} />
+          <ContactList
+            contacts={visibleContact}
+            onDeleteContact={deleteContact}
+          />
+        </Section>
+      </div>
     );
   }
 }
