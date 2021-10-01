@@ -1,0 +1,17 @@
+.contactList {
+  width: 400px;
+  margin: 0 auto;
+}
+.contactListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.text {
+  margin: 0;
+  margin-right: 15px;
+}
+/* .btn {
+  margin-top: 10px;
+} */
