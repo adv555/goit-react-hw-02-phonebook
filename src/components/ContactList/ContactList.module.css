@@ -1,6 +1,7 @@
 .contactList {
   width: 400px;
   margin: 0 auto;
+  margin-left: 0;
 }
 .contactListItem {
   display: flex;
